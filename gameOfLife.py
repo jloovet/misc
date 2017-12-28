@@ -22,17 +22,18 @@ def step(grid):
                     resultGrid[x,y] = 1
     return resultGrid
 
-#produce 1 for approx 20%
-grid = np.random.random(size = [100,100]) > 0.8 
-#grid = np.zeros([100,100])
-#grid[3,3] = 1
-#grid[5:20,4] = 1
-
-while True :
-    for i in range(10) :
-        plt.imshow(grid)
-        plt.show()
-        grid = step(grid)
-    if input("Continue=? ") == 'n' :
-        break
+#check if it's execuded, or imported
+if __name__ == "__main__" :
+    #produce 1 for approx 20%
+    grid = np.random.random(size = [100,100]) > 0.8 
+    #grid = np.zeros([100,100])
+    #grid[3,3] = 1
+    #grid[5:20,4] = 1
+    while True :
+        for i in range(10) :
+            plt.imshow(grid)
+            plt.show()
+            grid = step(grid)
+        if input("Continue=? ") == 'n' :
+            break
     
